@@ -1,15 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-home',
-  template: `<h3>{{ message }}</h3>`
+  template: `<h3>Home {{ message |json}}</h3>`
 })
 export class HomeComponent implements OnInit {
-  public message: string;
+  public message: any;
 
-  constructor() {}
+  constructor(private httpClient: HttpClient
+  ) {
+
+  }
 
   ngOnInit() {
-    this.message = 'Hello';
+    this.httpClient.get('https://reqres.in/api/users?delay=3').subscribe(result => {
+      this.message = result;
+    });
+
   }
 }
