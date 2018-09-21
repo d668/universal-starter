@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {TransferHttpCacheModule} from '@nguniversal/common';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from './cookie.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,13 @@ import { HttpClientModule } from '@angular/common/http';
     TransferHttpCacheModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CookieService,
+        {
+            provide: 'req',
+            useValue: null
+        }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

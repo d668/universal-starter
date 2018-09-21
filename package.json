@@ -42,8 +42,9 @@
     "@angular/platform-server": "^6.0.0",
     "@angular/router": "^6.0.0",
     "@nguniversal/common": "^6.0.0",
-    "@nguniversal/express-engine": "^6.0.0",
+    "@nguniversal/express-engine": "^6.1.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
+    "@ngx-utils/cookies": "^3.0.2",
     "core-js": "^2.4.1",
     "rxjs": "^6.2.2",
     "zone.js": "^0.8.26"
